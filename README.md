@@ -25,3 +25,106 @@
 
 ### Problem Statement
 
+1. How do holidays affect the total number of bicycle users (cnt)?
+2. What is the average and distribution of the number of bicycle users (casual and registered) during peak hours (morning: 7–9, afternoon: 17–19)?
+3. Do weather conditions (weathersit) affect the number of bicycle users (cnt)?
+4. How does bicycle use (cnt) compare between different seasons?
+5. How bicycle usage trends changed from 2011 to 2012?
+
+## Exploratory Data Analysis
+
+```python 
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 731 entries, 0 to 730
+Data columns (total 15 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   dteday      731 non-null    object 
+ 1   season      731 non-null    int64  
+ 2   yr          731 non-null    int64  
+ 3   mnth        731 non-null    int64  
+ 4   holiday     731 non-null    int64  
+ 5   weekday     731 non-null    int64  
+ 6   workingday  731 non-null    int64  
+ 7   weathersit  731 non-null    int64  
+ 8   temp        731 non-null    float64
+ 9   atemp       731 non-null    float64
+ 10  hum         731 non-null    float64
+ 11  windspeed   731 non-null    float64
+ 12  casual      731 non-null    int64  
+ 13  registered  731 non-null    int64  
+ 14  cnt         731 non-null    int64  
+dtypes: float64(4), int64(10), object(1)
+memory usage: 85.8+ KB
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 17379 entries, 0 to 17378
+Data columns (total 15 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   season      17379 non-null  int64  
+ 1   yr          17379 non-null  int64  
+ 2   mnth        17379 non-null  int64  
+ 3   hr          17379 non-null  int64  
+ 4   holiday     17379 non-null  int64  
+ 5   weekday     17379 non-null  int64  
+ 6   workingday  17379 non-null  int64  
+ 7   weathersit  17379 non-null  int64  
+ 8   temp        17379 non-null  float64
+ 9   atemp       17379 non-null  float64
+ 10  hum         17379 non-null  float64
+ 11  windspeed   17379 non-null  float64
+ 12  casual      17379 non-null  int64  
+ 13  registered  17379 non-null  int64  
+ 14  cnt         17379 non-null  int64  
+dtypes: float64(4), int64(11)
+memory usage: 2.0 MB
+```
+
+### Dataset General Information
+
+The dataset consists of 2 main tables:
+
+    1. Daily Data (day.csv): Contains cycling activity information by day with a total of 731 entries and 15 columns.
+    2. Hourly Data (hour.csv): Contains information on cycling activity by hour with a total of 17,379 entries and 15 columns.
+
+### Column Description
+
+```
+Temporal Column:
+    - dteday = Date
+    - yr = Year (0: 2011, 1: 2012)
+    - mnth = Month (1 - 12)
+    - hr = Hours of the day (0-23, hourly data only)
+    - weekday = Day of the week (0 for Sunday, 6 for Saturday)
+
+Category Column:
+    - season = Season (1: Springer, 2: Summer, 3: Fall, 4: Winter)
+    - holiday = Holiday indicator (0: No Holiday, 1: Holiday)
+    - workingday = Workingday indicator (0: Not Workingday, 1: Workingday)
+    - weathersit = Weather conditions (1: Clear, Few clouds, Partly cloudy, Partly cloudy, 
+                                       2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist, 
+                                       3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds, 
+                                       4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog).
+
+Numeric Column:
+    - temp = Normalization temperature (scale 0–1).
+    - atemp = Perceived temperature (scale 0–1).
+    - hum = Humidity level (scale 0–1).
+    - windspeed = Wind speed (scale 0–1).
+    - casual = Number of casual (unregistered) users.
+    - registered = Number of registered users.
+    - cnt = Total number of bicycle users (casual + registered).
+```
+
+### Data Characteristics
+```
+Daily Data:
+    - All columns have 731 complete data without null or empty values.
+    - The cnt column represents the total daily bicycle users, which is the sum of the casual and registered columns.
+
+Hourly Data:
+    - Has 17,379 entries with no null values.
+    - cnt also represents the total number of bicycle users per hour.
+    - Includes granular columns such as hr that allow for in-depth analysis based on specific time.
+```
+
