@@ -128,3 +128,43 @@ Hourly Data:
     - Includes granular columns such as hr that allow for in-depth analysis based on specific time.
 ```
 
+### Comparison of Daily and Hourly Data
+
+| Characteristics     | Daily Data             | Hourly Data                   |
+|---------------------|------------------------|-------------------------------|
+| Total Data          | 731 Rows               | 17379 Rows                    |
+| Total Average (cnt) | 4504.35 users/day      | 189.46 users/hour             | 
+| Time span           | Per day                | Per Hour                      |
+| Usage Patterns      | Based on season/weather| Based on specific time        |
+| Domination          | Summer                 | Rush hour (morning & evening) |
+
+### Correlation Analysis
+
+**Daily Data Correlation**
+    <img src="https://github.com/user-attachments/assets/de9a535d-ff8c-49f6-9769-6157efdd5207" alt="Correlation Daily Data" title="Correlation Daily Data">
+- cnt:
+    - Highly positively correlated with registered (0.95) and casual (0.67)
+    - Positively correlated with temp (0.63) and atemp (0.63)
+    - Negative correlation with weathersite (-0.30)
+- casual:
+    - Negative correlation with working day (-0.52)
+- registered:
+    - Positively correlated with working day (0.30)
+- Correlation Between Weather Variables:
+    - temp and atemp have a very strong correlation (0.99), indicating that the actual temperature and perceived temperature are nearly identical.
+
+**Hourly Data Correlation**
+    <img src="https://github.com/user-attachments/assets/2e9cd127-9468-4713-99cc-d16a1494e70b" alt="Correlation Hourly Data" title="Correlation Hourly Data">
+- cnt:
+    - Highly positively correlated with registered (0.97) and casual (0.69)
+    - Positively correlated with temp (0.40) and atemp (0.40)
+    - Negative correlation with weathersit (-0.14) and hum (-0.32)
+- casual:
+    - Strong negative correlation with workingday (-0.30)
+- registered:
+    - Positively correlated with working day (0.13)
+    - Strongly correlated with hr (Hours) (0.37)
+- Correlation Between Weather Variables:
+    - temp and atemp remain highly correlated (0.99), indicating consistency with daily data.
+    - hum (humidity) has a negative correlation with bicycle use, indicating that humid conditions may reduce user interest.
+
