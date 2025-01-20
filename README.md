@@ -224,3 +224,7 @@ Correlation Between Weather Variables:
 3. Provide adequate facilities, such as protected bicycle lanes, to support bicycle use in inclement weather.
 4. Consider special promotions to increase bike use in the winter, such as heated bike lanes or discounts.
 5. To increase ridership in winter, consider initiatives such as discount offers, special events, or weather-protected bike paths.
+
+## Reference
+
+[1] [Bike Sharing Dataset](Readme.txt) 
