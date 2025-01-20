@@ -142,29 +142,85 @@ Hourly Data:
 
 **Daily Data Correlation**
     <img src="https://github.com/user-attachments/assets/de9a535d-ff8c-49f6-9769-6157efdd5207" alt="Correlation Daily Data" title="Correlation Daily Data">
-- cnt:
+```
+cnt:
     - Highly positively correlated with registered (0.95) and casual (0.67)
     - Positively correlated with temp (0.63) and atemp (0.63)
     - Negative correlation with weathersite (-0.30)
-- casual:
-    - Negative correlation with working day (-0.52)
-- registered:
-    - Positively correlated with working day (0.30)
-- Correlation Between Weather Variables:
-    - temp and atemp have a very strong correlation (0.99), indicating that the actual temperature and perceived temperature are nearly identical.
 
+casual:
+    - Negative correlation with working day (-0.52)
+
+registered:
+    - Positively correlated with working day (0.30)
+
+Correlation Between Weather Variables:
+    - temp and atemp have a very strong correlation (0.99), indicating that the actual temperature and perceived temperature are nearly identical.
+```
 **Hourly Data Correlation**
     <img src="https://github.com/user-attachments/assets/2e9cd127-9468-4713-99cc-d16a1494e70b" alt="Correlation Hourly Data" title="Correlation Hourly Data">
-- cnt:
+```
+cnt:
     - Highly positively correlated with registered (0.97) and casual (0.69)
     - Positively correlated with temp (0.40) and atemp (0.40)
     - Negative correlation with weathersit (-0.14) and hum (-0.32)
-- casual:
+
+casual:
     - Strong negative correlation with workingday (-0.30)
-- registered:
+
+registered:
     - Positively correlated with working day (0.13)
     - Strongly correlated with hr (Hours) (0.37)
-- Correlation Between Weather Variables:
+
+Correlation Between Weather Variables:
     - temp and atemp remain highly correlated (0.99), indicating consistency with daily data.
     - hum (humidity) has a negative correlation with bicycle use, indicating that humid conditions may reduce user interest.
+```
+## Discussion, Visualization and Explanatory Data Analysis
+### 1. How do holidays affect the total number of bicycle users (cnt)?
+<img src="https://github.com/user-attachments/assets/7b8710f8-8338-4722-b886-9babe3351abb" alt="Holiday Affect" title="Holiday Affect">
 
+```
+1. The average number of bicycle users is higher on non-holiday days (4.527) compared to holidays (3.735).
+2. The holiday data only includes 21 records, which is much fewer than non-holidays.
+```
+
+### 2. What is the average and distribution of the number of bicycle users (casual and registered) during peak hours (morning: 7–9, afternoon: 17–19)?
+<img src="https://github.com/user-attachments/assets/956b13d6-5d83-47fc-9694-12cfdd914788" alt="Rush Hour Average" title="Rush Hour Average">
+
+```
+1. The average number of bicycle users is higher on registered users (290) compare to casual (41)
+2. The data shows that each peak hour (morning and evening) recorded the same number of passengers between the two groups.
+```
+
+### 3. Do weather conditions (weathersit) affect the number of bicycle users (cnt)?
+<img src="https://github.com/user-attachments/assets/527fbc4d-3c02-4be8-8102-7913d5af9fe8" alt="Weather Condition" title="Weather Condition">
+
+```
+1. The worse the weather conditions, the fewer the number of cyclists.
+2. Sunny weather is the most supportive condition for bicycle use.
+```
+
+### 4. How does bicycle use (cnt) compare between different seasons?
+<img src="https://github.com/user-attachments/assets/b68f88f8-b92b-437d-a626-3af145477406" alt="Seasons Compare" title="Seasons Compare">
+
+```
+1. Bicycle usage peaks during the summer, making it the most popular season for cycling. Bicycle use decreases drastically during the winter, possibly due to unfavorable weather.
+2. Bicycle use is closely related to weather comfort. Warmer and sunnier seasons attract more users.
+```
+
+### 5. How bicycle usage trends changed from 2011 to 2012?
+<img src="https://github.com/user-attachments/assets/b41552c6-29fb-4cf7-94fd-d313f3a958e5" alt="Monthly Trends" title="Monthly Trends">
+
+```
+1. Bicycle use decreases dramatically during the winter (November–February), possibly due to less comfortable weather.
+2. September recorded the highest average number of cyclists compared to other months, indicating that late summer or early fall (depending on the dataset location) is the optimal time for cycling.
+```
+
+## Conclusion and Recommendation
+
+1. Attract more cyclists on holidays by holding special events or promotions.
+2. Allocating more bikes and infrastructure during peak hours can improve the experience of registered users.
+3. Provide adequate facilities, such as protected bicycle lanes, to support bicycle use in inclement weather.
+4. Consider special promotions to increase bike use in the winter, such as heated bike lanes or discounts.
+5. To increase ridership in winter, consider initiatives such as discount offers, special events, or weather-protected bike paths.
